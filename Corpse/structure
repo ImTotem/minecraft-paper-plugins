@@ -1,0 +1,48 @@
+ServerPlayer:
+ - Id
+ - Location
+ - InventoryHolder (인벤토)
+
+CorpseData:
+ - UUID (CorpseInteract에서 시체 주인이 누군인지 Bukkit.getPlayer(Uuid)대신 CorpseData.getUuid() == event.getPlayer().getUniqueId()로 구별)
+ - Location
+ - CustomInventory
+
+CustomInventory:
+ - Inventory(Vanilla, getContents()만 이용)
+ - OpenInventory(InventoryView, Vanilla, Corpse.setInventory에서 사용됨)
+
+Need Data:
+ - Id
+ - UUID
+ - Location
+ - InventoryHolder
+ - Inventory(Vanilla)
+ - OpenInventory(InventoryView, Vanilla)
+
+[데이터 플로우]
+죽을때 최초 Corpse 생성 -> Player의 Inventory, OpenInventory, Location, UUID(Player를 가져오기 위함)를 추출
+서버가 꺼질때 Corpse에서 Data를 추출해 config에 저장
+서버가 켜질때 config에 저장된 Corpse Data를 불러와 새로운 Corpse를 생성 (즉, 같은 Data를 가지고 있는 다른 메모리 주소의 새로운 Corpse)
+
+PlayerDeathEvent -> Player -> CorpseData -> Corpse
+onDisable -> Corpse -> CorpseData -> config
+onEnable -> config -> CorpseData -> Corpse
+RightClickCorpse -> Corpse -> CorpseData -> Player
+
+InventoryCloseEvent -> Corpse -> InventoryHolder
+
+[문제점]
+ServerPlayer를 extends 해야하는 이유
+ - Id 생성 방식을 모름 -> Id는 Corpse의 패킷을 만드는데 필요함
+ - InventoryHolder가 필요함 -> InventoryCloseEvent에서 TopInventory의 주인이 Corpse인지 판별하기 위해 필요함
+
+[고민]
+ServerPlayer의 Location을 쓸까 or 새로운 CorpseData 클래스를 만들어서 Location을 저장하여 불러올까
+
+ServerPlayer의 Location을 사용하면?
+ - config.set(id+"."+"location", this.getOnPos())
+ - config.set(id+"."+"UUID"
+
+CorpseData의 Location을 사용하면?
+ - config.set(id, CorpseData)

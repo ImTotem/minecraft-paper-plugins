@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Tracker" />
+        <module name="Always Glowing" />
+        <module name="bettersleep" />
+        <module name="glowing" />
+        <module name="Corpse 2" />
+        <module name="AutoSave" />
+        <module name="Better Sleep" />
+        <module name="Corpse" />
+        <module name="Chat Sound" />
+        <module name="corpse" />
+        <module name="chatsound" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Auto_Save" target="17" />
+      <module name="Auto_Save.main" target="17" />
+      <module name="Auto_Save.test" target="17" />
+      <module name="AutoSave.main" target="17" />
+      <module name="AutoSave.test" target="17" />
+      <module name="CommandAPI" target="11" />
+      <module name="Crafting World" target="17" />
+      <module name="Kommand" target="1.8" />
+      <module name="KotlinTest" target="17" />
+      <module name="Survival" target="17" />
+      <module name="Test" target="1.8" />
+      <module name="Test.main" target="17" />
+      <module name="Test.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

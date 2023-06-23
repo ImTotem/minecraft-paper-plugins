@@ -1,0 +1,13 @@
+name: AlwaysGlowing
+version: '${project.version}'
+main: com.imtotem.glowing.AlwaysGlowing
+api-version: 1.19
+authors: [ Im_Totem ]
+description: Always Glowing
+website: https://github.com/ImTotem
+
+commands:
+  glow:
+    description: 발광 색상을 변경합니다.
+    usage: /glow <color list>
+    aliases: color

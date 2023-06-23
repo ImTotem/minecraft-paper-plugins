@@ -1,0 +1,18 @@
+name: Tracker
+version: '${project.version}'
+main: io.github.imtotem.tracker.Tracker
+api-version: 1.19
+authors: [ Im_Totem ]
+description: Tracking players and locations
+website: https://github.com/ImTotem
+
+commands:
+  target:
+    description: setting traking player
+    usage: /target [name]
+  place:
+    description: control places
+    usage: /place [add/remove/modify/list/info]
+  toggle:
+    description: toggle tracker plugin
+    usage: /toggle

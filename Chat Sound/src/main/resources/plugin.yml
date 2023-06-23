@@ -1,0 +1,13 @@
+name: ChatSound
+version: '${project.version}'
+main: com.imtotem.chatsound.Chatsound
+api-version: 1.19
+authors: [ ImTotem ]
+description: Chat Sound Plugin
+website: https://github.com/ImTotem
+
+commands:
+  chatsound:
+    description: 플레이어가 채팅을 쳤을때 '띵'소리를 들려줍니다
+    usage: /chatsound [on/off]
+    aliases: cs

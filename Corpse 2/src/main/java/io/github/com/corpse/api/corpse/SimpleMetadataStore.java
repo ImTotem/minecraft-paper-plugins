@@ -1,0 +1,111 @@
+package io.github.com.corpse.api.corpse;
+
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Maps;
+import net.citizensnpcs.api.util.DataKey;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class SimpleMetadataStore implements MetadataStore {
+    private final Map<String, MetadataObject> metadata = Maps.newHashMap();
+
+    private void checkPrimitive(Object data) {
+        Preconditions.checkNotNull(data, "data cannot be null");
+        boolean isPrimitive = data instanceof String || data instanceof Boolean || data instanceof Number;
+        if (!isPrimitive) {
+            throw new IllegalArgumentException("data is not primitive");
+        }
+    }
+
+    @Override
+    public MetadataStore clone() {
+        SimpleMetadataStore copy = new SimpleMetadataStore();
+        copy.metadata.putAll(metadata);
+        return copy;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <T> T get(String key) {
+        Preconditions.checkNotNull(key, "key cannot be null");
+        MetadataObject normal = metadata.get(key);
+        return normal == null ? null : (T) normal.value;
+    }
+
+    @Override
+    public <T> T get(String key, T def) {
+        T t = get(key);
+        if (t == null) {
+            return def;
+        }
+        return t;
+    }
+
+    @Override
+    public boolean has(String key) {
+        Preconditions.checkNotNull(key, "key cannot be null");
+        return metadata.containsKey(key);
+    }
+
+    @Override
+    public void loadFrom(DataKey key) {
+        Iterator<Entry<String, MetadataObject>> itr = metadata.entrySet().iterator();
+        while (itr.hasNext()) {
+            if (itr.next().getValue().persistent) {
+                itr.remove();
+            }
+        }
+        for (DataKey subKey : key.getSubKeys()) {
+            setPersistent(subKey.name(), subKey.getRaw(""));
+        }
+    }
+
+    @Override
+    public void remove(String key) {
+        metadata.remove(key);
+    }
+
+    @Override
+    public void saveTo(DataKey key) {
+        Preconditions.checkNotNull(key, "key cannot be null");
+        for (Entry<String, MetadataObject> entry : metadata.entrySet()) {
+            if (entry.getValue().persistent) {
+                key.setRaw(entry.getKey(), entry.getValue().value);
+            }
+        }
+    }
+
+    @Override
+    public void set(String key, Object data) {
+        Preconditions.checkNotNull(key, "key cannot be null");
+        if (data == null) {
+            remove(key);
+        } else {
+            metadata.put(key, new MetadataObject(data, false));
+        }
+    }
+
+    @Override
+    public void setPersistent(String key, Object data) {
+        Preconditions.checkNotNull(key, "key cannot be null");
+        checkPrimitive(data);
+        metadata.put(key, new MetadataObject(data, true));
+    }
+
+    @Override
+    public int size() {
+        return metadata.size();
+    }
+
+    private static class MetadataObject {
+        final boolean persistent;
+        final Object value;
+
+        public MetadataObject(Object raw, boolean persistent) {
+            this.value = raw;
+            this.persistent = persistent;
+        }
+    }
+}
