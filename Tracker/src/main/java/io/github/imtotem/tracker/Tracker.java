@@ -106,8 +106,11 @@ public final class Tracker extends JavaPlugin {
             return false;
         }
 
-        if ( sversion.equals("v1_19_R1") ) {
-            actionBar = new ActionBar_1_19_R1();
+        switch (sversion) {
+            case "v1_19_R1":
+            case "v1_20_R1":
+                actionBar = new ActionBar_1_19_R1();
+                break;
         }
 
         return actionBar != null;

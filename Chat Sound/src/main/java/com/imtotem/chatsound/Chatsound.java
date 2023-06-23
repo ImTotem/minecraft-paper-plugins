@@ -3,13 +3,15 @@ package com.imtotem.chatsound;
 import com.imtotem.chatsound.command.ChatSoundCommand;
 import com.imtotem.chatsound.event.JoinEvent;
 import com.imtotem.chatsound.event.PlayerChattedEvent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+
+import static net.kyori.adventure.text.Component.text;
 
 public final class Chatsound extends JavaPlugin {
 
@@ -19,7 +21,10 @@ public final class Chatsound extends JavaPlugin {
     @Override
     public void onEnable()
     {
-        Bukkit.getConsoleSender().sendMessage("[ChatSound] " + ChatColor.GREEN + "ChatSound 플러그인이 활성화됨");
+        Bukkit.getConsoleSender().sendMessage(
+            text("[ChatSound] ")
+            .append(text("ChatSound 플러그인이 활성화됨", NamedTextColor.GREEN))
+        );
 
         initEvents();
         initCommands();
@@ -30,7 +35,10 @@ public final class Chatsound extends JavaPlugin {
     @Override
     public void onDisable()
     {
-        Bukkit.getConsoleSender().sendMessage("[ChatSound] " + ChatColor.RED + "ChatSound 플러그인이 비활성화됨");
+        Bukkit.getConsoleSender().sendMessage(
+                text("[ChatSound] ")
+                        .append(text("ChatSound 플러그인이 비활성화됨", NamedTextColor.RED))
+        );
     }
 
     public void initEvents() {

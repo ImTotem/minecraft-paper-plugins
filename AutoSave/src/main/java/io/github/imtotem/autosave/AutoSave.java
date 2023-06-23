@@ -1,7 +1,7 @@
 package io.github.imtotem.autosave;
 
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -16,7 +16,7 @@ public final class AutoSave extends JavaPlugin implements Listener {
     private Integer id = null;
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage("[AutoSave] " + ChatColor.GREEN + "AutoSave 플러그인이 활성화됨");
+        Bukkit.getConsoleSender().sendMessage(text("[AutoSave] ").append(text("AutoSave 플러그인이 활성화됨", NamedTextColor.GREEN)));
         loadConfig();
 
         initCommand();
@@ -29,7 +29,7 @@ public final class AutoSave extends JavaPlugin implements Listener {
     public void onDisable() {
         getServer().getScheduler().cancelTask(id);
         AutoRun.dispatchCommand(this);
-        Bukkit.getConsoleSender().sendMessage("[AutoSave] " + ChatColor.RED + "AutoSave 플러그인이 비활성화됨");
+        Bukkit.getConsoleSender().sendMessage(text("[AutoSave] ").append(text("AutoSave 플러그인이 비활성화됨", NamedTextColor.RED)));
     }
 
     private void loadConfig()

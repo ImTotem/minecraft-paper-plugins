@@ -1,7 +1,7 @@
 name: AutoSave
 version: '${project.version}'
 main: io.github.imtotem.autosave.AutoSave
-api-version: 1.19
+api-version: 1.20
 authors: [ Im_Totem ]
 description: Auto Save Server With World Save Event
 website: https://github.com/ImTotem
