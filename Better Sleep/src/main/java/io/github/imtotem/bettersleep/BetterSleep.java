@@ -17,6 +17,6 @@ public final class BetterSleep extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        super.onDisable();
     }
 }

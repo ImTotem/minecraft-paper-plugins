@@ -41,7 +41,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>\Users\sungbin\Desktop\1.19.2 bukkit\plugins\${project.name}.jar</outputFile>
+                            <outputFile>/Users/sungbin/Desktop/plugins/${project.name}.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.19.2-R0.1-SNAPSHOT</version>
+            <version>1.20.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

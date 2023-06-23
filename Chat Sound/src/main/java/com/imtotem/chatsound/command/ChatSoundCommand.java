@@ -1,10 +1,8 @@
 package com.imtotem.chatsound.command;
 
 import com.imtotem.chatsound.Chatsound;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static net.kyori.adventure.text.Component.text;
 
 public class ChatSoundCommand implements CommandExecutor, TabCompleter {
     private final Plugin instance = Chatsound.getPlugin(Chatsound.class);
@@ -30,9 +30,9 @@ public class ChatSoundCommand implements CommandExecutor, TabCompleter {
                 TextColor color = status ? NamedTextColor.GREEN : Chatsound.offHexColor;
 
                 player.sendMessage(
-                        Component.text("Chat Sound", Chatsound.baseHexColor)
-                                .append(Component.text(": "))
-                                .append(Component.text(stringStatus, color))
+                        text("Chat Sound", Chatsound.baseHexColor)
+                                .append(text(": "))
+                                .append(text(stringStatus, color))
                 );
                 return true;
             }
@@ -43,14 +43,17 @@ public class ChatSoundCommand implements CommandExecutor, TabCompleter {
                 if ( args[0].equalsIgnoreCase("on") ) {
                     if ( instance.getConfig().getBoolean("uuid." + uuid) ) {
                         player.sendMessage(
-                                ChatColor.RED + "Already" + ChatColor.GREEN + " On"
+                                text("Already", NamedTextColor.RED)
+                                .append(
+                                    text(" On", NamedTextColor.GREEN)
+                                )
                         );
                     }
                     else {
                         player.sendMessage(
-                                Component.text("Chat Sound", Chatsound.baseHexColor)
-                                        .append(Component.text(": "))
-                                        .append(Component.text("On", NamedTextColor.GREEN))
+                                text("Chat Sound", Chatsound.baseHexColor)
+                                        .append(text(": "))
+                                        .append(text("On", NamedTextColor.GREEN))
                         );
                         instance.getConfig().set("uuid." + uuid, true);
                         instance.saveConfig();
@@ -61,15 +64,15 @@ public class ChatSoundCommand implements CommandExecutor, TabCompleter {
                 else if ( args[0].equalsIgnoreCase("off") ) {
                     if ( !instance.getConfig().getBoolean("uuid." + uuid) ) {
                         player.sendMessage(
-                                Component.text("Already", NamedTextColor.RED)
-                                        .append(Component.text(" Off", Chatsound.offHexColor))
+                                text("Already", NamedTextColor.RED)
+                                        .append(text(" Off", Chatsound.offHexColor))
                         );
                     }
                     else {
                         player.sendMessage(
-                                Component.text("Chat Sound", Chatsound.baseHexColor)
-                                        .append(Component.text(": "))
-                                        .append(Component.text("Off", Chatsound.offHexColor))
+                                text("Chat Sound", Chatsound.baseHexColor)
+                                        .append(text(": "))
+                                        .append(text("Off", Chatsound.offHexColor))
                         );
                         instance.getConfig().set("uuid." + uuid, false);
                         instance.saveConfig();
