@@ -1,9 +1,0 @@
-name: Survival
-version: '${version}'
-main: com.imtotem.survival.Survival
-api-version: 1.19
-authors: [Im_Totem]
-description: Survival
-website: https://github.com/ImTotem
-libraries:
-  - io.github.monun:kommand-core:2.14.0

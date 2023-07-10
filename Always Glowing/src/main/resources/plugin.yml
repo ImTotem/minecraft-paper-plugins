@@ -1,7 +1,7 @@
 name: AlwaysGlowing
 version: '${project.version}'
 main: com.imtotem.glowing.AlwaysGlowing
-api-version: 1.19
+api-version: '1.20'
 authors: [ Im_Totem ]
 description: Always Glowing
 website: https://github.com/ImTotem

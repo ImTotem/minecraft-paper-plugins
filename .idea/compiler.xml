@@ -10,16 +10,13 @@
         <module name="Always Glowing" />
         <module name="autosave" />
         <module name="Corpse 2" />
-        <module name="corpse (1) (io.github.com)" />
         <module name="Better Sleep" />
         <module name="Chat Sound" />
-        <module name="corpse (2) (io.github.imtotem)" />
         <module name="bettersleep" />
         <module name="glowing" />
         <module name="AutoSave" />
         <module name="tracker" />
         <module name="Corpse" />
-        <module name="corpse" />
         <module name="chatsound" />
       </profile>
     </annotationProcessing>
@@ -30,9 +27,13 @@
       <module name="AutoSave.main" target="17" />
       <module name="AutoSave.test" target="17" />
       <module name="CommandAPI" target="11" />
+      <module name="corpse" target="1.8" />
+      <module name="corpse (1) (io.github.com)" target="1.8" />
+      <module name="corpse (2) (io.github.imtotem)" target="1.8" />
       <module name="Crafting World" target="17" />
       <module name="Kommand" target="1.8" />
       <module name="KotlinTest" target="17" />
+      <module name="survival" target="17" />
       <module name="Survival" target="17" />
       <module name="Test" target="1.8" />
       <module name="Test.main" target="17" />
