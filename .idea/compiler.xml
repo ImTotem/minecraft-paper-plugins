@@ -33,6 +33,7 @@
       <module name="Crafting World" target="17" />
       <module name="Kommand" target="1.8" />
       <module name="KotlinTest" target="17" />
+      <module name="survival" target="17" />
       <module name="Survival" target="17" />
       <module name="Test" target="1.8" />
       <module name="Test.main" target="17" />
