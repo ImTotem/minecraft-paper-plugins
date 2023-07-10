@@ -1,7 +1,7 @@
 name: BetterSleep
 version: '${project.version}'
 main: io.github.imtotem.bettersleep.BetterSleep
-api-version: 1.20
+api-version: '1.20'
 authors: [ Im_Totem ]
 description: Can change the time even if only one player sleep
 website: https://github.com/ImTotem

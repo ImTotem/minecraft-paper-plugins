@@ -1,4 +1,0 @@
-name: Corpse
-version: '${project.version}'
-main: io.github.com.corpse.Main
-api-version: 1.19
