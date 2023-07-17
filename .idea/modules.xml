@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1721241563/Corpse.NpcAPI.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1721241563/Corpse.NpcAPI.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Corpse.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Corpse.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Corpse.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Corpse.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Survival Project.iml" filepath="$PROJECT_DIR$/.idea/Survival Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/AutoSave/autosave.iml" filepath="$PROJECT_DIR$/AutoSave/autosave.iml" />
       <module fileurl="file://$PROJECT_DIR$/Better Sleep/bettersleep.iml" filepath="$PROJECT_DIR$/Better Sleep/bettersleep.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chat Sound/chatsound.iml" filepath="$PROJECT_DIR$/Chat Sound/chatsound.iml" />
       <module fileurl="file://$PROJECT_DIR$/Always Glowing/glowing.iml" filepath="$PROJECT_DIR$/Always Glowing/glowing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/survival.main.iml" filepath="$PROJECT_DIR$/.idea/modules/survival.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/npc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/npc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tracker/tracker.iml" filepath="$PROJECT_DIR$/Tracker/tracker.iml" />
     </modules>
   </component>

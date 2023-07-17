@@ -1,0 +1,14 @@
+name: Corpse
+version: '${version}'
+main: io.github.imtotem.corpse.Corpse
+api-version: '1.20'
+depend: [Citizens]
+prefix: Corpse
+authors: [ ImTotem ]
+description: Storing the items in corpse instead of Dropping the items on the ground
+website: https://github.com/ImTotem
+
+commands:
+  corpse:
+    description: show corpse list
+    usage: /corpse <list/name>

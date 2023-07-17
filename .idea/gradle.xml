@@ -4,11 +4,10 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Survival" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Corpse" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/Survival" />
+            <option value="$PROJECT_DIR$/Corpse" />
           </set>
         </option>
       </GradleProjectSettings>

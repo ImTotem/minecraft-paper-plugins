@@ -8,15 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Tracker" />
         <module name="Always Glowing" />
+        <module name="bettersleep" />
         <module name="autosave" />
         <module name="Corpse 2" />
-        <module name="Better Sleep" />
-        <module name="Chat Sound" />
-        <module name="bettersleep" />
         <module name="glowing" />
         <module name="AutoSave" />
         <module name="tracker" />
+        <module name="Better Sleep" />
         <module name="Corpse" />
+        <module name="Chat Sound" />
         <module name="chatsound" />
       </profile>
     </annotationProcessing>
@@ -30,11 +30,22 @@
       <module name="corpse" target="1.8" />
       <module name="corpse (1) (io.github.com)" target="1.8" />
       <module name="corpse (2) (io.github.imtotem)" target="1.8" />
+      <module name="Corpse.npc-api" target="17" />
+      <module name="Corpse.npc-api.main" target="17" />
+      <module name="Corpse.npc-api.test" target="17" />
+      <module name="Corpse.NpcAPI" target="17" />
+      <module name="Corpse.NpcAPI.main" target="17" />
+      <module name="Corpse.NpcAPI.test" target="17" />
       <module name="Crafting World" target="17" />
       <module name="Kommand" target="1.8" />
       <module name="KotlinTest" target="17" />
+      <module name="NpcAPI" target="17" />
+      <module name="NpcAPI.main" target="17" />
+      <module name="NpcAPI.test" target="17" />
       <module name="survival" target="17" />
       <module name="Survival" target="17" />
+      <module name="survival.main" target="17" />
+      <module name="survival.test" target="17" />
       <module name="Test" target="1.8" />
       <module name="Test.main" target="17" />
       <module name="Test.test" target="17" />
