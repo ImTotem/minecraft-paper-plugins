@@ -1,4 +1,4 @@
-# minecraft-paper-plugins
+# [minecraft-paper-plugins](https://github.com/ImTotem/minecraft-paper-plugins)
 
 Minecraft Paper Bucket Plugin
 
